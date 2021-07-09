@@ -1,0 +1,73 @@
+.cta {
+  padding: 3.5rem 0;
+  text-align: center;
+
+  @media only screen and (max-width: $bp-medium) {
+    padding: 2.5rem 0;
+  }
+
+  &__book-now {
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-weight: 300;
+    margin-bottom: 2.5rem;
+  }
+
+  &__btn {
+    font-size: 1.5rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    border-radius: 100px;
+    border: none;
+    background-image: linear-gradient(
+      to right,
+      var(--primary-light),
+      var(--primary-dark)
+    );
+    color: var(--white);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+  }
+
+  &__btn > * {
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    transition: all 0.2s;
+  }
+
+  &__btn-visible {
+    display: inline-block;
+    padding: 2rem 7.5rem;
+  }
+
+  &__btn-invisible {
+    position: absolute;
+    padding: 2rem 0;
+
+    left: 0;
+    top: -100%;
+  }
+
+  &__btn:hover {
+    background-image: linear-gradient(
+      to left,
+      var(--primary-light),
+      var(--primary-dark)
+    );
+  }
+
+  &__btn:hover &__btn-visible {
+    transform: translateY(100%);
+  }
+
+  &__btn:hover &__btn-invisible {
+    top: 0;
+  }
+
+  &__btn:focus {
+    outline: none;
+    animation: pulsate 1s infinite;
+  }
+}
